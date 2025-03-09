@@ -5,5 +5,5 @@
 ### 나도솔로 (NADO-SOLO)
 
 ## 테이블 설계
-
+![Image](https://github.com/user-attachments/assets/d38542a1-c27e-4d22-893e-e9583ae6518a)
 ## API 명세
