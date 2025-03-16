@@ -44,10 +44,10 @@ class SwipeControllerTest {
             .thenReturn(swipes)
 
         // when
-        val controllerUsers = swipeController.swipes()
+        val controllerSwipes = swipeController.swipes()
 
         // then
-        assertEquals(swipes.size, controllerUsers.size)
+        assertEquals(swipes.size, controllerSwipes.size)
     }
 
     @Test

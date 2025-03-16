@@ -37,8 +37,8 @@ class SwipeRepositoryTest(
     fun findByAll() {
         // given
         // when
-        val users = swipeRepository.findAll()
-        users.forEach {
+        val swipes = swipeRepository.findAll()
+        swipes.forEach {
             println(
                 "name = ${it.swiperId}, " +
                         "email = ${it.swipedId}, " +
@@ -48,7 +48,7 @@ class SwipeRepositoryTest(
         }
 
         // then
-        assertThat(users).hasSize(1)
+        assertThat(swipes).hasSize(1)
     }
 
     @Test
