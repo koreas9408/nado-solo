@@ -8,6 +8,7 @@ import jakarta.persistence.*
 class Swipe(
     val swiperId: Long,
     val swipedId: Long,
+    @Enumerated(EnumType.STRING)
     val direction: Direction,
     val isSuperLike: Boolean = false,
 ) : BaseEntity() {
