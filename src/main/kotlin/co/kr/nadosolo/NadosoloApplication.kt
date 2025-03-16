@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class NadosoloApplication
 
 fun main(args: Array<String>) {
-	runApplication<NadosoloApplication>(*args)
+    runApplication<NadosoloApplication>(*args)
 }
