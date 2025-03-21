@@ -1,5 +1,8 @@
 package co.kr.nadosolo.service
 
+import co.kr.nadosolo.domain.dto.UserCreateRequest
+import co.kr.nadosolo.domain.dto.UserUpdateRequest
+import co.kr.nadosolo.domain.entity.User
 import co.kr.nadosolo.dto.UserDTO
 import co.kr.nadosolo.repository.UserRepository
 import org.springframework.stereotype.Service
@@ -24,4 +27,39 @@ class UserService(
 
         return UserDTO(user)
     }
+
+    @Transactional
+    fun save(request: UserCreateRequest) {
+        // TODO:: encrypt 필요
+        userRepository.save(
+            User.of(
+                name = request.name,
+                email = request.email,
+                password = request.password,
+                birthDate = request.birthDate,
+                gender = request.gender,
+            )
+        )
+    }
+
+    @Transactional
+    fun update(id: Long, request: UserUpdateRequest) {
+        // TODO:: encrypt 필요
+        val user = userRepository.findById(id).orElseThrow {
+            throw RuntimeException("${id}의 유저가 존재하지 않습니다.")
+        }
+
+        user.update(request)
+    }
+
+    @Transactional
+    fun delete(id: Long) {
+        // TODO:: encrypt 필요
+        val user = userRepository.findById(id).orElseThrow {
+            throw RuntimeException("${id}의 유저가 존재하지 않습니다.")
+        }
+
+        userRepository.delete(user)
+    }
+
 }
